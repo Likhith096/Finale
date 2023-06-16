@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="/login.css" rel="stylesheet">
+    <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <script src="/validation.js" defer> </script>
+</head>
+<body>
+
+  <section id="header">
+    <a href=""><img src="/Images/logo.png" class="logo"></a>
+    <div>
+        <ul id="navbar">
+            <li><a href="search.html"><i class="fas fa-search" aria-hidden="true"></i></a></li>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="cart.html"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
+            <li><a class="active" href="login.html"><i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
+            </a></li>
+        </ul>
+    </div>
+</section>
+
+            <!-- Final -->
+            <section id="login"> 
+                <div class="content">
+                    <div class="btn"><!--For the buttons-->
+                        <div id="b"></div>
+                        <button type="button" class="b" onclick="login()">Log In</button>
+                        <button type="button" class="b" onclick="signup()">Sign up</button>
+                    </div>
+            
+                    <form name="loginF" id="l" action="/login" method="POST" onsubmit="return validateForm('loginF')""> 
+                        <div class="text" id="name">
+                            <input type="text" name="fname" required>
+                            <span class="formerror"></span>
+                            <label>Username</label>
+                        </div>
+            
+                        <div class="text" id="pass">
+                            <input type="password" name="fpass" required>
+                            <span class="formerror"></span>
+                            <label>Password</label>
+                        </div>
+            
+                        <div class="links">
+                            <a href="forgotpassword.html">Forgot Password</a>
+                            <br>
+                            <a href="login.html">New member? Sign up</a>
+                        </div>
+                        <input type="submit" value="Submit">
+                    </form>
+            
+                    <!--For sign Up-->
+                    <!-- <form name="signupF" action="http://localhost:3000/signupData" method="POST" id="s"> -->
+                        <form name="signupF" action="/login" method="POST" id="s" onsubmit="return validateForm('signupF')">
+                        <div class="text" id="sname">
+                            <input type="text" name="sname" required>
+                            <span class="formerror"></span>
+                            <label>Username</label>
+                        </div>
+            
+                        <div class="text" id="susn">
+                            <input type="text" name="susn" required>
+                            <span class="formerror"></span>
+                            <label>USN</label>
+                        </div>
+            
+                        <div class="text" id="semail">
+                            <input type="email" name="semail" required>
+                            <span class="formerror"></span>
+                            <label>Email Id</label>
+                        </div>
+            
+                        <div class="text" id="spass">
+                            <input type="password" name="spass" required>
+                            <span class="formerror"></span>
+                            <label>Password</label>
+                        </div>
+            
+                        <div class="links">
+                            <a href="termsandconditions.html">I agree to the terms & conditions</a>
+                            <br>
+                            <a href="login.html">Already Signed up? Log in</a>
+                        </div>
+                        <input type="submit">Submit</input>
+                        <!-- <input type="submit" onclick="validateForm('signupF')">Submit</input> -->
+                    </form>
+                </div>
+            </section>
+            
+</body>
+</html> 

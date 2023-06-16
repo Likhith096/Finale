@@ -1,0 +1,23 @@
+{
+  "name": "finale",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "devStart": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "bcrypt": "^5.1.0",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "hbs": "^4.2.0",
+    "mongoose": "^7.3.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.1.4",
+    "nodemon": "^2.0.22"
+  }
+}

@@ -1,0 +1,256 @@
+body{
+    background-color: white;
+    min-height: 150vh;
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: 'League Spartan', sans-serif;
+    box-sizing: border-box;
+     background: linear-gradient(120deg,#2980b9,#8e44ad); 
+}
+/* start of login css */
+#header{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    padding:20px 100px;
+    background:white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    position:sticky;
+    top:0;
+    left:0;
+    height:72px;
+}
+
+#header img {
+    width:80px;
+}
+#navbar {
+    display: flex;
+    align-items:center;
+    justify-content:center;
+}
+#navbar li {
+    list-style: none;
+    padding:20px 20px;
+    position:relative;
+}
+#navbar li a {
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bolder;
+    color: rgb(43, 45, 45);
+    transition:0.4s ease;
+}
+#navbar li a:hover,
+#navbar li a.active {
+    color:	#ce5656;
+}
+#navbar li a.active::after,
+#navbar li a:hover::after{
+    content:"";
+    width:30%;
+    height:2px;
+    background:#ce5656 ;
+    position:absolute;
+    bottom:16px;
+    left:20px;
+}
+
+/*Login CSS*/
+
+#login
+{
+    position: absolute;
+    width:350px;
+    height:600px;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-40%);
+    border-radius: 8px;
+    overflow: hidden;
+    min-height: 60vh;
+    /* background: #dce4e4; */
+    background-color: whitesmoke;
+    /* background: linear-gradient(120deg,#8cdcde,white); */
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.btn{
+    width:320px;
+    height:40px;
+    box-shadow: 0 0 20px 9px #ff61241f;
+    border-radius: 30px;
+    padding:5px;
+    margin: 15px 0px 5px 10px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    text-decoration: none;
+}
+ .b{
+    cursor: pointer;
+    color: black;
+    font-size: 20px;
+    letter-spacing: 0.8px;
+    outline:none;
+    border: 0;
+    background: none;
+    padding: 10px 20px;
+    position: relative;
+}
+ #b{ /*for styling the Login button*/
+    top:0;
+    left:0;
+    position: absolute;
+    width:170px;/*half of btn div */
+    height:100%;
+    background: orangered;
+    border-radius: 30px;
+    transition: 0.7s;
+}
+
+
+.content{
+    position:absolute;
+}
+ .content form{
+    padding: 0 40px;
+    box-sizing: border-box;
+    position:relative;
+    
+} 
+
+ .content form .text
+{
+    position:relative;
+    border-bottom: 2px solid #c56d0f;
+    margin: 50px 0;
+}
+ .content .text input{
+
+    width:100%;
+    padding: 0px 5px;
+    background: none;
+    border: none;
+    outline: none;
+    height:40px;
+    font-size: 16px;
+}
+ .text label{
+    position: absolute;
+    left:5px;
+    top:50%;
+    transition: 0.5s;
+    transform: translateY(-50%);
+    color: #adadad;
+    font-size: 16px;
+    pointer-events: none;
+}
+
+ .content .text span
+{
+    content: '';
+    position: absolute;
+    top:40px;
+    left:0;
+    width:0%;
+    height:2px;
+    background: #2691d9;  
+}
+
+ .text input:focus~label,
+ .text input:valid~label{
+    top:-5px;
+    left:0;
+    color:#2691d9;
+}
+
+ .text input:focus~span,
+ .text input:valid~span{
+    width:100%;
+}
+
+ .links{
+    margin: -5px 0 20px 5px;
+    cursor:pointer;
+}
+ .links a{
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color:#8e44ad;
+}
+
+ .links:hover{
+    text-decoration: underline;
+}
+
+input[type="submit"]{
+    width:100%;
+    height:50px;
+    border: #2691d9;
+    background: #8e44ad ;
+    border-radius: 8px ;
+    font-size: 18px ;
+    color: white;
+    outline:none;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover{
+    background-color: lightskyblue ;
+    transition: 1s;
+}
+
+#l{
+    left:10px ;
+
+}
+#s{
+    bottom:350px;
+    left:360px;
+}
+
+/*footer*/
+/* footer {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: auto;
+    padding:15px 15px 0px 15px;
+    background-color: lightgray;
+    border-radius: 4px;
+    height:12rem;
+}
+footer .col {
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+footer .logo {
+    margin-bottom:30px;
+}
+footer h4{
+    font-size: 22px;
+    padding-bottom:20px;
+}
+footer p {
+    font-size: 17px;
+    text-decoration: none;
+    margin:0 0 8px 0;
+}
+footer a{
+    font-size: 17px;
+    text-decoration: none;
+    color:black;
+    margin:0 0 8px 0;
+    transition: 0.5s;
+}
+footer a:hover {
+    color:red;
+} */
