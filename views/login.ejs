@@ -37,7 +37,7 @@
                         <button type="button" class="b" onclick="signup()">Sign up</button>
                     </div>
             
-                    <form name="loginF" id="l" action="/login" method="POST" onsubmit="return validateForm('loginF')""> 
+                    <form name="loginF" id="l" action="/login" method="POST" onsubmit="return validateForm('loginF')"> 
                         <div class="text" id="name">
                             <input type="text" name="fname" required>
                             <span class="formerror"></span>
@@ -60,7 +60,7 @@
             
                     <!--For sign Up-->
                     <!-- <form name="signupF" action="http://localhost:3000/signupData" method="POST" id="s"> -->
-                        <form name="signupF" action="/login" method="POST" id="s" onsubmit="return validateForm('signupF')">
+                        <form name="signupF" action="/register" method="POST" id="s" onsubmit="return validateForm('signupF')">
                         <div class="text" id="sname">
                             <input type="text" name="sname" required>
                             <span class="formerror"></span>

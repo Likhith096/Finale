@@ -17,8 +17,8 @@ function login() {
 //Final :-
 
 function validateForm(formName) {
-    //event.p
-    reventDefault(); // Prevent default form submission behavior
+    //event.preventDefault(); // Prevent default form submission behavior
+    
     var returnval = true; // Assuming it is true
 
     if (formName === 'loginF') {
@@ -31,8 +31,8 @@ function validateForm(formName) {
             returnval = false;
         }
 
-        if (pass.length !== 8) {
-            seterror('pass', '*Password should be of 8 characters');
+        if (pass.length < 8) {
+            seterror('pass', '*Password should be of minimum 8 characters');
             returnval = false;
         }
 
@@ -64,10 +64,11 @@ function validateForm(formName) {
             returnval = false;
         }
 
-        if (specialChars.test(spass)) {
-            seterror('spass', '*Password should not contain special characters');
+        if (spass.length < 8) {
+            seterror('pass', '*Password should be of minimum 8 characters');
             returnval = false;
         }
+
     }
 
     console.log('returnval:', returnval);
