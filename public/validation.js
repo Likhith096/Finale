@@ -44,6 +44,7 @@ function validateForm(formName) {
         var sname = document.forms['signupF']['sname'].value;
         var susn = document.forms['signupF']['susn'].value;
         var spass = document.forms['signupF']['spass'].value;
+        var semail = document.forms['signupF']['semail'].value;
 
         var specialChars = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
 
@@ -58,6 +59,17 @@ function validateForm(formName) {
             seterror('susn', '*USN should be of 10 characters');
             returnval = false;
         }
+
+        if (!susn.startsWith('1BM')) {
+            seterror('susn','USN must start with "1BM"');
+            return false;
+          }
+        
+        if (!semail.endsWith('@bmsce.ac.in')) {
+            seterror('susn','Email must be of the format *@bmsce.ac.in');
+            return false;
+          }
+        
 
         if (specialChars.test(sname)) {
             seterror('sname', '*Name should not contain special characters');

@@ -4,27 +4,31 @@ const bodyParser = require('body-parser');
 const app = express();
 require("./db/conn");
 const Register = require("./db/models/register");
+const bcrypt = require('bcrypt');
+const saltRounds = 10; // Number of salt rounds to use for hashing
 
 // const users = []
 
 app.use(bodyParser.urlencoded({extended : false}))
 
+// Serve static files from the 'public' directory
+app.use(express.static('public'));
+
 app.set('view engine', 'ejs');
 
 app.post("/register" , async(req, res) =>{
     try{
-        const formType = req.body.formType;
-        // if(formType === "login"){
+        const plainTextPassword = req.body.spass;
+        const hashedPassword = await bcrypt.hash(plainTextPassword, saltRounds);
         const userData = ({
             id : Date.now().toString() ,
             UserName: req.body.sname ,
             USN: req.body.susn,
             Email: req.body.semail,
-            Password: req.body.spass
+            Password: hashedPassword
         })
         const registered = await Register.create(userData); //Register -- is collection name
         res.status(201).render('login');
-        alert("Connection Sucessful");
     }
     //}
     catch(e){
@@ -35,7 +39,6 @@ app.post("/register" , async(req, res) =>{
 })
 
 //Ensuring Routing
-app.use(express.static('public'));
 
 app.get('/' ,(req,res) =>{
     res.render("home.ejs")
