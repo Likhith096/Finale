@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Image</title>
+  <style>
+    input[type="file"] {
+      width: 100%;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Upload Image</h1>
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="text" name="FileName">
+    <input type="file" name="testImage">
+    <button type="submit">Upload</button>
+  </form>
+</body>

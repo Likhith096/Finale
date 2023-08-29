@@ -3,10 +3,9 @@ const express = require("express");
 const bodyParser = require('body-parser');
 const app = express();
 require("./db/conn");
+const multer = require('multer');
 const Register = require("./db/models/register");
-const bcrypt = require('bcrypt');
-const saltRounds = 10; // Number of salt rounds to use for hashing
-
+const ImageModel = require("./db/models/Upload");
 // const users = []
 
 app.use(bodyParser.urlencoded({extended : false}))
@@ -73,7 +72,38 @@ app.post("/login" , async(req, res) =>{
 })
 //End of Routes
 
-app.listen(3000 , () =>{
-    console.log("I am listening")
+//Storage
+const Storage = multer.diskStorage({
+    destination: "uploads",
+    filename:(req,file,cb)=>{
+        cb(null,file.originalname);
+    },
+})
+const upload = multer({
+    storage:Storage
+}).single('testImage')
+
+app.post('/upload',(req,res)=>{
+    upload(req,res,(err)=>{
+        if(err){
+            console.log(err)
+        }
+        else{
+            const newImage = new ImageModel({
+                name : req.body.FileName,
+                image:{
+                    data:req.file.filename,
+                    contentType:'image/png'
+                }
+            })
+            newImage.save()
+            .then(()=>res.send("Successfully uploaded"))
+            .catch(err=>console.log(err));
+        }
+    }) 
 })
 
+
+app.listen(8000 , () =>{
+    console.log("I am listening")
+})
