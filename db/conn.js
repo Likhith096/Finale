@@ -1,9 +1,6 @@
 const mongoose = require('mongoose');
-
-mongoose.connect("mongodb://localhost:27017/Registration",{
-    useNewUrlParser : true,
-    useUnifiedTopology: true,
-    autoIndex: true
+const uri = "mongodb+srv://likhith096:" + encodeURIComponent("Likhith@mongo#") + "@cluster0.c2bkayl.mongodb.net/?retryWrites=true&w=majority";
+mongoose.connect(uri,{
 }).then(() => {
     console.log("Connection Successful!")
 }).catch((e) =>{
