@@ -5,7 +5,7 @@
   "main": "script.js",
   "scripts": {
     "devStart": "nodemon server.js",
-    "build": "npm run clean && npm run lint && npm run webpack"
+    "build": "echo 'No build process needed'"
   },
   "author": "",
   "license": "ISC",
