@@ -4,7 +4,8 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "devStart": "nodemon server.js"
+    "devStart": "nodemon server.js",
+    "build": "npm run clean && npm run lint && npm run webpack"
   },
   "author": "",
   "license": "ISC",
