@@ -34,17 +34,17 @@ jobs:
 
       - name: Build Docker image 
         run: |
-          docker build -t likhithgs/node-js:0.0.1.RELEASE .
+          docker build -t likhithgs/node-js:0.0.3.RELEASE .
         working-directory: ${{ github.workspace }}
 
       - name: Push Docker image 
         run: |
-          docker push likhithgs/node-js:0.0.1.RELEASE
+          docker push likhithgs/node-js:0.0.3.RELEASE
         working-directory: ${{ github.workspace}}
 
       - name: Deploy to Docker Hub
         run: |
-         docker pull likhithgs/node-js:0.0.1.RELEASE
+         docker pull likhithgs/node-js:0.0.3.RELEASE
          docker-compose up -d
         working-directory: ${{ github.workspace }}
         env:

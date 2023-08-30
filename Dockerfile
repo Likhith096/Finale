@@ -5,16 +5,22 @@ FROM node:alpine AS development
 ENV NODE_ENV development
 
 # Set the working directory within the container
-WORKDIR /node-app
+WORKDIR /node-js-app
 
-# Copy the package.json and package-lock.json files to the container
-COPY ./package.json ./package-lock.json /node-app/
-
-# Install dependencies
+# Add the ingredients (copy package files and install dependencies)
+COPY package*.json ./
 RUN npm install
 
-# Copy the rest of the application files to the container
+EXPOSE 3000
+
+## THE LIFE SAVER
+ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.2.1/wait /wait
+RUN chmod +x /wait
+
+# Add the rest of the app's files
 COPY . .
 
-# Set the command to run when the container starts
-CMD ["node", "server.js"]
+# Say which part to bake (start the app)
+
+# CMD [ "node", "server.js" ]
+CMD /wait && node server.js

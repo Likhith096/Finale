@@ -18,13 +18,12 @@ app.set('view engine', 'ejs');
 app.post("/register" , async(req, res) =>{
     try{
         const plainTextPassword = req.body.spass;
-        const hashedPassword = await bcrypt.hash(plainTextPassword, saltRounds);
         const userData = ({
             id : Date.now().toString() ,
             UserName: req.body.sname ,
             USN: req.body.susn,
             Email: req.body.semail,
-            Password: hashedPassword
+            Password: plainTextPassword
         })
         const registered = await Register.create(userData); //Register -- is collection name
         res.status(201).render('login');
@@ -103,7 +102,8 @@ app.post('/upload',(req,res)=>{
     }) 
 })
 
+const PORT = 3000; // Change this to the port you want to use
 
-app.listen(8000 , () =>{
-    console.log("I am listening")
-})
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server is running on port ${PORT}`);
+});
