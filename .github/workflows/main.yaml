@@ -22,7 +22,7 @@ jobs:
         run: |
           npm install
 
-      - name: Build and test 
+      - name: EBuy-CI/CD
         run: |
           npm run build
 
