@@ -40,7 +40,7 @@ jobs:
       - name: Push Docker image 
         run: |
           docker push likhithgs/node-js:0.0.1.RELEASE
-        working-directory: ${{ github.workspace }}
+        working-directory: ${{ github.workspace}}
 
       - name: Deploy to Docker Hub
         run: |
