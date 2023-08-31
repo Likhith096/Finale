@@ -45,7 +45,6 @@ jobs:
       - name: Deploy to Docker Hub
         run: |
          docker pull likhithgs/node-js:0.0.3.RELEASE
-         docker-compose up -d
         working-directory: ${{ github.workspace }}
         env:
           PORT: 3000
