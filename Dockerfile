@@ -20,7 +20,5 @@ RUN chmod +x /wait
 # Add the rest of the app's files
 COPY . .
 
-# Say which part to bake (start the app)
-
 # CMD [ "node", "server.js" ]
 CMD /wait && node server.js
